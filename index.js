@@ -12,6 +12,7 @@ const axios = require('axios')
 const mongoose = require('mongoose')
 const Crypto = require('./model/model')
 
+const port = process.env.PORT || 3000
 
 const dbURL = process.env.DB_URL || 'mongodb://localhost:27017/crypto'
 mongoose.connect(dbURL)
@@ -52,6 +53,6 @@ await Crypto.deleteMany()
     
 })
 
-app.listen(3000, ()=>{
+app.listen(port, ()=>{
     console.log(`Listening to port 3000`)
 })
